@@ -54,32 +54,8 @@ struct ContentView: View {
     ContentView()
 }
 
-// MARK: - WeatherDayView
-struct WeatherDayView: View {
-    var dayOfWeek: String
-    var imageName: String
-    var temperature: Int
-    
-    var body: some View {
-        VStack(spacing: 8) {
-            Text(dayOfWeek)
-                .font(.system(size: 16, weight: .medium))
-                .foregroundStyle(.white)
-            Image(systemName: imageName)
-                .renderingMode(.original)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 40, height: 40)
-            Text("\(temperature)°")
-                .font(.system(size: 28, weight: .medium))
-                .foregroundStyle(.white)
-            
-        }
-    }
-}
-
 // MARK: - BackgroundView
-struct BackgroundView: View {
+private struct BackgroundView: View {
     var topColor: Color
     var bottomColor: Color
     
@@ -122,5 +98,29 @@ struct MainWeatherStatusView: View {
                 .foregroundStyle(.white)
         }
         .padding(.bottom, 40)
+    }
+}
+
+// MARK: - WeatherDayView
+struct WeatherDayView: View {
+    var dayOfWeek: String
+    var imageName: String
+    var temperature: Int
+    
+    var body: some View {
+        VStack(spacing: 8) {
+            Text(dayOfWeek)
+                .font(.system(size: 16, weight: .medium))
+                .foregroundStyle(.white)
+            Image(systemName: imageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40)
+            Text("\(temperature)°")
+                .font(.system(size: 28, weight: .medium))
+                .foregroundStyle(.white)
+            
+        }
     }
 }
