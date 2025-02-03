@@ -13,28 +13,14 @@ struct ContentView: View {
                 CityTextView(cityName: "Cupertino, CA")
 
                 MainWeatherStatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill",
-                                      temperature: 76)
+                                      temperature: 8)
                 
                 HStack(spacing: 20) {
-                    WeatherDayView(dayOfWeek: "TUE",
-                                   imageName: "cloud.sun.fill",
-                                   temperature: 74)
-                    
-                    WeatherDayView(dayOfWeek: "WED",
-                                   imageName: "sun.max.fill",
-                                   temperature: 76)
-                    
-                    WeatherDayView(dayOfWeek: "THU",
-                                   imageName: "sun.max.fill",
-                                   temperature: 67)
-                    
-                    WeatherDayView(dayOfWeek: "FRI",
-                                   imageName: "wind.snow",
-                                   temperature: 55)
-                    
-                    WeatherDayView(dayOfWeek: "SAT",
-                                   imageName: "snow",
-                                   temperature: 38)
+                    ForEach(WeatherDataMock.fiveDayWeatherData, id: \.self) { weatherInfo in
+                        WeatherDayView(dayOfWeek: weatherInfo.day,
+                                       imageName: weatherInfo.image,
+                                       temperature: weatherInfo.temperature)
+                    }
                 }
                 
                 Spacer()
