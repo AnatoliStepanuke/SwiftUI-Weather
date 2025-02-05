@@ -10,7 +10,7 @@ struct ContentView: View {
             BackgroundView(isNight: $isNight)
             
             VStack {
-                CityTextView(cityName: "Cupertino, CA")
+                CityTextView(cityName: "Minsk, Belarus")
 
                 MainWeatherStatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill",
                                       temperature: 8)
