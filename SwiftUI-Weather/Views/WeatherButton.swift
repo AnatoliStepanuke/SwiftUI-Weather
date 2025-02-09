@@ -14,3 +14,11 @@ struct WeatherButton: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
+
+struct WeatherButton_Previews: PreviewProvider {
+    static var previews: some View {
+        WeatherButton(title: "Test Title",
+                      textColor: .white,
+                      backgroundColor: .blue)
+    }
+}
