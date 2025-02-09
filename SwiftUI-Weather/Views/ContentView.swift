@@ -44,7 +44,6 @@ struct ContentView: View {
 
 // MARK: - BackgroundView
 private struct BackgroundView: View {
-//    @Binding var isNight: Bool
     var isNight: Bool
     
     var body: some View {
